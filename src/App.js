@@ -1,7 +1,12 @@
 import React from "react";
+import { AppContext } from "./context/contextApi";
 
 const App = () => {
-  return <div className="underline">App</div>;
+  return (
+    <AppContext>
+      <div className="">App</div>;
+    </AppContext>
+  );
 };
 
 export default App;
