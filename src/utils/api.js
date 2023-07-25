@@ -1059,7 +1059,7 @@ export const fetchDataFromApi = async (url) => {
     refinements: [],
   };
   console.log(`${BASE_URL}/${url}`, options);
-  //const { data } = await axios.get(`${BASE_URL}/${url}`, options);
   const data = dummy_data;
+  // const { data } = await axios.get(`${BASE_URL}/${url}`, options);
   return data;
 };

@@ -1,15 +1,10 @@
 import React from "react";
 import router from "./router/router";
 
-import { AppContext } from "./context/contextApi";
 import { RouterProvider } from "react-router-dom";
 
 const App = () => {
-  return (
-    <AppContext>
-      <RouterProvider router={router}></RouterProvider>
-    </AppContext>
-  );
+  return <RouterProvider router={router}></RouterProvider>;
 };
 
 export default App;

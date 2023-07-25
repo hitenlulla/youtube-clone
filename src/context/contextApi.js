@@ -1,11 +1,20 @@
 import React, { createContext, useState, useEffect } from "react";
 import { fetchDataFromApi } from "../utils/api";
 
-export const Context = createContext();
+export const Context = createContext({
+  loading: false,
+  setLoading: () => {},
+  searchResults: [],
+  setsearchResults: () => {},
+  selectCategories: "New",
+  setselectCategories: () => {},
+  mobileMenu: false,
+  setmobileMenu: () => {},
+});
 
 export const AppContext = (props) => {
   const [loading, setLoading] = useState(false);
-  const [searchResults, setsearchResults] = useState(false);
+  const [searchResults, setsearchResults] = useState([]);
   const [selectCategories, setselectCategories] = useState("New");
   const [mobileMenu, setmobileMenu] = useState(false);
 
@@ -24,16 +33,16 @@ export const AppContext = (props) => {
 
   return (
     <Context.Provider
-      value={
-        (loading,
+      value={{
+        loading,
         setLoading,
         searchResults,
         setsearchResults,
         selectCategories,
         setselectCategories,
         mobileMenu,
-        setmobileMenu)
-      }
+        setmobileMenu,
+      }}
     >
       {props.children}
     </Context.Provider>
