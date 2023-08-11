@@ -5,7 +5,7 @@ import { AppContext } from "../context/contextApi";
 export default function RootLayout() {
   return (
     <AppContext>
-      <div className="flex flex-col h-full">
+      <div className="flex flex-col h-full bg-black">
         <Header />
         <Outlet />
       </div>
